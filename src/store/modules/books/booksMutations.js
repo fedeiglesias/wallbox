@@ -24,7 +24,7 @@ export default {
   },
 
   ADD (state, bookData) {
-    state.items.push(bookData)
+    state.items.unshift(bookData)
   },
 
   SET_ERROR (state, data) {

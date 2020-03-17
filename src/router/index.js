@@ -1,0 +1,46 @@
+import Vue from 'vue'
+import Router from 'vue-router'
+import BookList from '@/components/books/BookList'
+import Login from '@/components/auth/Login'
+import Register from '@/components/auth/Register'
+import store from '@/store'
+
+Vue.use(Router)
+
+let router = new Router({
+  mode: 'history',
+  routes: [
+    {
+      path: '/',
+      name: 'books',
+      component: BookList,
+      meta: {
+        requiresAuth: true
+      }
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: Login
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: Register
+    }
+  ]
+})
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (store.getters['auth/loggedIn']) {
+      next()
+      return
+    }
+    next('/login')
+  } else {
+    next()
+  }
+})
+
+export default router

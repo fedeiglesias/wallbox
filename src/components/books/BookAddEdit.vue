@@ -128,7 +128,7 @@ export default {
     menu (val) {
       val && setTimeout(() => (this.$refs.picker.activePicker = 'YEAR'))
     },
-    mode (newData, oldData) {
+    mode (newData) {
       console.log('Open/close')
 
       if (newData === 'add') {

@@ -1,25 +1,30 @@
 <template>
   <div class="sheet">
-    <div
-      v-if="!this.$store.state.books.loading && !this.$store.state.authors.loading">
-        <div class="list" v-if="actualPage">
-          <book-view
-            v-for="book in books"
-            :key="book.ID"
-            :book="book">
-          </book-view>
-        </div>
-    </div>
+    <div>
+      <h1 text-align="center">Login</h1>
+      
+      <div
+        v-if="!this.$store.state.books.loading && !this.$store.state.authors.loading">
+          <div class="list" v-if="actualPage">
+            <book-view
+              v-for="book in books"
+              :key="book.ID"
+              :book="book">
+            </book-view>
+          </div>
+      </div>
 
-    <book-delete></book-delete>
-    <book-add-edit></book-add-edit>
-    <div class="progress" v-if="existMoreItemsToShow()">
-      <v-progress-circular
-        :size="70"
-        :width="7"
-        color="#43ba9b"
-        indeterminate>
-      </v-progress-circular>
+      <book-delete></book-delete>
+      <book-add-edit></book-add-edit>
+
+      <div class="progress" v-if="existMoreItemsToShow()">
+        <v-progress-circular
+          :size="70"
+          :width="7"
+          color="#43ba9b"
+          indeterminate>
+        </v-progress-circular>
+      </div>
     </div>
   </div>
 </template>
@@ -60,7 +65,7 @@ export default {
     ...mapGetters({
       existMoreItemsToShow: 'books/existMoreItemsToShow'
     }),
-    handleScroll (e) {
+    handleScroll () {
       let d = document.documentElement
       let offset = Math.ceil(d.scrollTop) + window.innerHeight
       let height = d.offsetHeight
@@ -83,7 +88,9 @@ export default {
 }
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+  @import "@/sass/_sheet.scss";
+  
   .list {
     display: flex;
     justify-content: center;
@@ -91,16 +98,6 @@ export default {
   }
   .list > * {
     margin: 10px;
-  }
-
-  .sheet {
-    margin-top: 200px;
-    width: 100%;
-    border-radius: 6px;
-    padding: 20px 0px;
-    background: rgba(255,255,255, 0.9);
-    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.7);
-    max-width: 100%;
   }
 
   .progress {

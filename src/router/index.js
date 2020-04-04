@@ -1,34 +1,37 @@
 import Vue from 'vue'
-import Router from 'vue-router'
-import BookList from '@/components/books/BookList'
-import Login from '@/components/auth/Login'
-import Register from '@/components/auth/Register'
+import VueRouter from 'vue-router'
+import Login from '@/views/Login.vue'
+import Register from '@/views/Register.vue'
+import Books from '@/views/Books.vue'
 import store from '@/store'
 
-Vue.use(Router)
+Vue.use(VueRouter)
 
-let router = new Router({
-  mode: 'history',
-  routes: [
-    {
-      path: '/',
-      name: 'books',
-      component: BookList,
-      meta: {
-        requiresAuth: true
-      }
-    },
-    {
-      path: '/login',
-      name: 'login',
-      component: Login
-    },
-    {
-      path: '/register',
-      name: 'register',
-      component: Register
+const routes = [
+  {
+    path: '/',
+    name: 'books',
+    component: Books,
+    meta: {
+      requiresAuth: true
     }
-  ]
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: Login
+  },
+  {
+    path: '/register',
+    name: 'register',
+    component: Register
+  }
+]
+
+const router = new VueRouter({
+  mode: 'history',
+  base: process.env.BASE_URL,
+  routes
 })
 
 router.beforeEach((to, from, next) => {

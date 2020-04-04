@@ -90,5 +90,4 @@ export default {
   .logo {
     height: 90%;
   }
-
 </style>

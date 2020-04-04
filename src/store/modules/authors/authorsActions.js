@@ -3,7 +3,7 @@ import { API_URL } from '../index'
 import { generateName, generateAvatar } from './authorsMock'
 
 export default {
-  getList ({ state, commit, dispatch }) {
+  getList ({ commit }) {
     commit('SET_LOADING', true)
     axios.get(API_URL + '/Authors')
       .then(response => {
@@ -20,7 +20,7 @@ export default {
         commit('SET_LOADING', false)
       })
   },
-  updateBooks ({ state, commit, dispatch }, payload) {
+  updateBooks ({ commit }, payload) {
     commit('UPDATE_BOOKS', payload)
   }
 }

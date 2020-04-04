@@ -3,7 +3,7 @@ import { API_URL } from '../index'
 import { bookData, coverGenerator } from './booksMock'
 
 export default {
-  getList ({ state, commit }) {
+  getList ({ commit }) {
     commit('SET_LOADING', true)
 
     axios.get(API_URL + '/Books')
@@ -38,9 +38,6 @@ export default {
   add ({commit, dispatch}, payload) {
     // In real world here make a async call to API
     // then trigger the state mutation depends on result
-
-    console.log('Agregamos')
-    console.log(payload)
 
     payload.book.ID = payload.authors.book = +new Date() // ID from server
     payload.book.coverImage = coverGenerator() // Cover from server

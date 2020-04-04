@@ -1,5 +1,5 @@
 export default {
-  getDefaultBook: state => ({
+  getDefaultBook: () => ({
     ID: null,
     Description: '',
     Excerpt: '',

@@ -29,7 +29,7 @@ export default {
     },
     dialog: {
       get () { return !!this.$store.state.books.layout.deleteModalId },
-      set (val) { this.$store.dispatch('books/hideDeleteDialog') }
+      set () { this.$store.dispatch('books/hideDeleteDialog') }
     }
   },
   methods: {

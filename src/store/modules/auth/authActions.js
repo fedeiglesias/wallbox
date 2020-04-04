@@ -1,7 +1,7 @@
 import router from '@/router/index'
 
 export default {
-  login ({ state, commit, dispatch }, payload) {
+  login ({ commit }, payload) {
     commit('SET_LOADING', true)
     // Simulate API call
     setTimeout(() => {
@@ -14,7 +14,7 @@ export default {
       commit('SET_LOADING', false)
     }, 2500)
   },
-  logout ({ state, commit, dispatch }) {
+  logout ({commit }) {
     commit('SET_LOADING', true)
     // Call to API and destroy session
     commit('SET_USER', null)

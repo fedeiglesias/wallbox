@@ -1,23 +1,29 @@
 <template>
-    <v-app class="app">
-      <app-bar></app-bar>
-      <v-content class="content">
-        <v-container class="container">
-          <router-view/>
-        </v-container>
-      </v-content>
-    </v-app>
+  
+  <v-app>
+
+    <!-- <header/> -->
+    <AppBar/>
+
+    <!-- <main/> -->
+    <v-content class="main">
+      <router-view></router-view>
+    </v-content>
+
+  </v-app>
 </template>
 
+
 <script>
-import AppBar from './components/AppBar'
+import AppBar from '@/components/AppBar';
 
 export default {
   name: 'App',
+
   components: {
-    AppBar
+    AppBar,
   }
-}
+};
 </script>
 
 <style>
@@ -25,7 +31,6 @@ export default {
 body {
   background-image: url(./assets/bg1.png);
   background-repeat: repeat;
-
 }
 
 body::before {
@@ -39,13 +44,17 @@ body::before {
   height: 400px;
 }
 
-.container {
-  display: flex;
-  justify-content: center;
+* {
+  box-sizing: border-box;
 }
 
-.app {
-  background: transparent !important;
+.main {
+  margin-top: 200px;
 }
+
+.v-application {
+  background: transparent !important; /* override vuetify theme */
+}
+
 
 </style>

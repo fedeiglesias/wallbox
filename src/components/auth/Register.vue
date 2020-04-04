@@ -107,7 +107,7 @@ export default {
   @import "./../../sass/_sheet.scss";
 
   .sheet {
-    max-width: 500px;
+    max-width: 450px;
   }
   
   .sheet-actions {

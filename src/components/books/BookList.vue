@@ -1,8 +1,6 @@
 <template>
   <div class="sheet">
-    <div>
-      <h1 text-align="center">Login</h1>
-      
+    <div>      
       <div
         v-if="!this.$store.state.books.loading && !this.$store.state.authors.loading">
           <div class="list" v-if="actualPage">

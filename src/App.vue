@@ -7,7 +7,9 @@
 
     <!-- <main/> -->
     <v-content class="main">
-      <router-view></router-view>
+      <transition name="fly" mode="out-in">
+        <router-view></router-view>
+      </transition>
     </v-content>
 
   </v-app>
@@ -26,7 +28,9 @@ export default {
 };
 </script>
 
-<style>
+<style lang="scss">
+
+@import "@/sass/animations/_fly.scss";
 
 body {
   background-image: url(./assets/bg1.png);
@@ -55,6 +59,5 @@ body::before {
 .v-application {
   background: transparent !important; /* override vuetify theme */
 }
-
 
 </style>

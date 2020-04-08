@@ -1,0 +1,11 @@
+app: wallbox
+component: website
+name: wallbox
+stage: prod
+
+inputs:
+  domain: wallbox.pixium.io
+  src:
+    src: ./src
+    hook: npm run build
+    dist: ./dist

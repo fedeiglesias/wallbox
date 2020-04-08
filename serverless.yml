@@ -2,7 +2,6 @@ service: wallbox
 app: wallbox
 org: fedeiglesias
 name: wallbox
-stage: prod
 
 provider:
   name: aws

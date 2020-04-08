@@ -5,6 +5,7 @@ name: wallbox
 
 provider:
   name: aws
+  runtime: nodejs10.x
 
 component: website
 

@@ -1,9 +1,13 @@
 service: wallbox
 app: wallbox
 org: fedeiglesias
-component: website
 name: wallbox
 stage: prod
+
+provider:
+  name: aws
+
+component: website
 
 inputs:
   domain: wallbox.pixium.io

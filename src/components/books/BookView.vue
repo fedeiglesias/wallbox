@@ -60,7 +60,7 @@
       </v-speed-dial>
     </v-card-title>
     <v-card-subtitle class="subtitle">
-      <span class="year">
+      <span class="year" id="year">
         {{ new Date(book.PublishDate).getFullYear() }}
       </span>
       <span class="pages">

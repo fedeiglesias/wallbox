@@ -4,6 +4,7 @@
       <h1 text-align="center">Login</h1>
 
       <v-text-field
+        id="username"
         label="Username"
         v-model="username"
         :rules="[rules.required]"
@@ -13,6 +14,7 @@
       </v-text-field>
 
       <v-text-field
+        id="password"
         v-model="password"
         color="#43ba9b"
         :rules="[rules.required]"
@@ -26,6 +28,7 @@
 
       <div class="sheet-actions">
         <v-btn
+          id="register"
           depressed
           text
           x-large
@@ -35,6 +38,7 @@
         </v-btn>
 
         <v-btn
+          id="login"
           :dark="valid()" color="#43ba9b"
           depressed
           x-large

@@ -1,6 +1,8 @@
-# Wallbox Books
+# Wallbox
 
-The wallbox Books Platform!
+Wallbox is a global company :earth_americas:, dedicated to changing the way the world uses energy :zap:. We create smart charging systems :electric_plug::battery: that combine cutting-edge technology with outstanding design, managing the communication between the car :blue_car: and charger via an easy-to-use App experience :iphone:.
+
+This project is a Job Challenge :technologist:!
 
 [Challenge description](/challenge/README.md)
 

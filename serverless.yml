@@ -1,5 +1,4 @@
-service:
-  name: wallbox
+service: wallbox
 
 plugins:
   - serverless-pseudo-parameters

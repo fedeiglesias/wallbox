@@ -1,4 +1,6 @@
 service: wallbox
+app: wallbox
+org: fedeiglesias
 
 plugins:
   - serverless-pseudo-parameters

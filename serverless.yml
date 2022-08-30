@@ -8,13 +8,12 @@ plugins:
 
 provider:
   name: aws
-  runtime: nodejs10.x
+  runtime: nodejs16.x
 
 custom:
-
   domain:
     # AWS domain id
-    id: 'Z008637234M1UDGEMIGLS'
+    id: "Z008637234M1UDGEMIGLS"
     name: pixium.io
     subdomain: wallbox.pixium.io
     # AWS certificate domain arn
@@ -22,18 +21,18 @@ custom:
 
   # Bucket name
   s3Bucket: ${self:service.name}-bucket
-  
+
   s3Sync:
     - bucketName: ${self:custom.s3Bucket}
       localDir: dist
       params:
         - index.html:
-            CacheControl: 'no-store, no-cache'
+            CacheControl: "no-store, no-cache"
         - service-worker.js:
-            CacheControl: 'no-store, no-cache'
+            CacheControl: "no-store, no-cache"
   scripts:
     hooks:
-      'before:deploy:deploy': npm run build
+      "before:deploy:deploy": npm run build
 
 resources:
   - ${file(aws/resources/s3-bucket.yml)}

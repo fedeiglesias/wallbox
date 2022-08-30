@@ -13,17 +13,17 @@ describe("BookView.vue", () => {
   let wrapper;
 
   const bookMock = {
-    ID: 1,
-    Title: "Cartas a Cristina",
-    Description:
+    id: 1,
+    title: "Cartas a Cristina",
+    description:
       "En Cartas a Cristina el autor vuelve vivas las sensaciones e impresiones vividas y explícitos los contrastes político-sociales en Brasil. Inaugurando un nuevo género en su obra, que bordea la ficción, Paulo Freire revela que la base de cualquier teoría y la llave del conocimiento se encuentran en la experiencia personal y la capacidad de aprender a partir de impresiones obtenidas del universo vivido.",
-    PageCount: 284,
-    PublishDate: "1996-01-01",
+    pageCount: 284,
+    publishDate: "1996-01-01",
     coverImage: "https://i.picsum.photos/id/1/400/300.jpg",
   };
   const authorsMock = () => () => [
     {
-      ID: 1,
+      id: 1,
       idBook: [1],
       firstName: "Elijiah",
       lastName: "David",

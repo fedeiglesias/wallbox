@@ -19,10 +19,10 @@ custom:
     certificateArn: arn:aws:acm:us-east-1:989257975727:certificate/af08c4cc-6b8d-4b21-a831-dce800e7001c
 
   # Bucket name
-  s3Bucket: ${self:service.name}-bucket
+  s3Bucket: ${service.name}-bucket
 
   s3Sync:
-    - bucketName: ${self:custom.s3Bucket}
+    - bucketName: ${custom.s3Bucket}
       localDir: dist
       params:
         - index.html:
